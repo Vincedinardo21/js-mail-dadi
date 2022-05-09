@@ -13,28 +13,29 @@ const random = Math.floor(Math.random() * numeriDado.length);
 const randomPC = Math.floor(Math.random() * numeriDado.length);
 console.log(numeriDado[random]);
 
-// Stampo in pagina il mio numero
+// Al click escono i risultati
 clickButton.addEventListener("click",
     function(){
+        // Stampo del mio numero
         myOutput.innerHTML = "Numero dado giocatore: " + numeriDado[random];
-    }
-);
 
-// Stampo in pagina il numero del PC
-clickButton.addEventListener("click",
-    function(){
+        // Stampo numero del PC
         pcOutput.innerHTML = "Numero dado PC: " + numeriDado[randomPC];
+        
+        // Stampo dell'esito
+        if(numeriDado[random] > numeriDado[randomPC]) {
+            console.log("Hai vinto");
+            esitoFinale.innerHTML = "Hai vinto!";          
+        } else if(numeriDado[random] == numeriDado[randomPC]) {
+            console.log("Pareggio");
+            esitoFinale.innerHTML = "Pareggio!";
+        } else {
+            console.log("Hai perso");
+            esitoFinale.innerHTML = "Hai perso!";
+        }
     }
 );
 
-if(numeriDado[random] > numeriDado[randomPC]) {
-    console.log("Hai vinto");
-    esitoFinale.innerHTML = "Hai vinto!";
-    
-} else if(numeriDado[random] == numeriDado[randomPC]) {
-    console.log("Pareggio");
-    esitoFinale.innerHTML = "Pareggio!";
-} else {
-    console.log("Hai perso");
-    esitoFinale.innerHTML = "Hai perso!";
-}
+
+
+
