@@ -1,5 +1,5 @@
 // Variabili
-var numeriDado = ["1", "2", "3", "4", "5", "6"];
+var numeriDado = [1, 2, 3, 4, 5, 6];
 const clickButton = document.getElementById("myButton");
 const myOutput = document.querySelector(".number");
 const pcOutput = document.querySelector(".numberPC");
@@ -14,13 +14,21 @@ console.log(numeriDado[random]);
 // Stampo in pagina il mio numero
 clickButton.addEventListener("click",
     function(){
-        myOutput.innerHTML = numeriDado[random];
+        myOutput.innerHTML = "Numero dado giocatore: " + numeriDado[random];
     }
 );
 
 // Stampo in pagina il numero del PC
 clickButton.addEventListener("click",
     function(){
-        pcOutput.innerHTML = numeriDado[randomPC];
+        pcOutput.innerHTML = "Numero dado PC: " + numeriDado[randomPC];
     }
 );
+
+if(numeriDado[random] > numeriDado[randomPC]) {
+    console.log("Hai vinto");
+} else if(numeriDado[random] == numeriDado[randomPC]) {
+    console.log("Pareggio");
+} else {
+    console.log("Hai perso");
+}
